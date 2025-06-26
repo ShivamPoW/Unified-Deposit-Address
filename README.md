@@ -1,7 +1,7 @@
 # Unified Deposit Address - Simple Implementation
 
 A simple, modern implementation of a unified deposit address system using EIP-7702 to upgrade EOAs to smart contracts for automatic USDC relaying across multiple blockchain networks.
-> Checkout process and transactions on [Arbiscan](https://sepolia.arbiscan.io/address/0xbb7a3502defdcf0502bb6e082d744567b903034b) and [Etherscan](https://sepolia.etherscan.io/address/0xbb7a3502defdcf0502bb6e082d744567b903034b). 
+> Checkout contracts and transactions on [Arbiscan](https://sepolia.arbiscan.io/address/0xbb7a3502defdcf0502bb6e082d744567b903034b) and [Etherscan](https://sepolia.etherscan.io/address/0xbb7a3502defdcf0502bb6e082d744567b903034b). 
 
 ## Overview
 
