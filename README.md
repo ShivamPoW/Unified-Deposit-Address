@@ -1,14 +1,13 @@
 # Unified Deposit Address - Simple Implementation
 
 A simple, modern implementation of a unified deposit address system using EIP-7702 to upgrade EOAs to smart contracts for automatic USDC relaying across multiple blockchain networks.
-
----
+> Checkout process and transactions on [Arbiscan](https://sepolia.arbiscan.io/address/0xbb7a3502defdcf0502bb6e082d744567b903034b) and [Etherscan](https://sepolia.etherscan.io/address/0xbb7a3502defdcf0502bb6e082d744567b903034b). 
 
 ## Overview
 
 This system enables a single deposit address (an EOA wallet) to be upgraded to a smart contract on multiple chains using EIP-7702. Any USDC or ETH sent to this address on any supported chain is automatically forwarded to a predefined recipient, with a backend service handling monitoring and relaying.
 
----
+
 
 ## Features
 
@@ -20,7 +19,6 @@ This system enables a single deposit address (an EOA wallet) to be upgraded to a
 - **Backend Monitoring:** Node.js backend watches for deposits and triggers relays.
 - **Clear, Minimal, and Extensible:** Focused on assignment requirements, but ready for future growth.
 
----
 
 ## Prerequisites
 
@@ -30,7 +28,6 @@ This system enables a single deposit address (an EOA wallet) to be upgraded to a
 - Etherscan API key (V2, works for all supported chains)
 - Testnet ETH and USDC for your unified deposit EOA
 
----
 
 ## Key Architecture Correction (IMPORTANT)
 
@@ -40,7 +37,6 @@ This system enables a single deposit address (an EOA wallet) to be upgraded to a
 - The proxy (unified address) holds funds and has its own storage (owner, recipient, relayer whitelist, etc.).
 - The implementation contract is only for logic and should never hold funds directly.
 
----
 
 ## Quick Start (Optimized)
 
@@ -73,7 +69,6 @@ npm install
 npm start
 ```
 
----
 
 ## Common Pitfalls & Troubleshooting
 
@@ -85,7 +80,7 @@ npm start
   - The proxy storage may not be initialized. Call these functions after the upgrade.
 - **Always interact with the proxy (unified address), not the implementation.**
 
----
+
 
 ## Configuration
 
@@ -101,7 +96,7 @@ ETHERSCAN_API_KEY=your_etherscan_api_key
 IMPLEMENTATION_ADDRESS=0x...         # Set for upgrade script
 ```
 
----
+
 
 ## How It Works
 
@@ -111,7 +106,6 @@ IMPLEMENTATION_ADDRESS=0x...         # Set for upgrade script
 4. **Monitor:** Backend watches for USDC/ETH sent to the unified address.
 5. **Relay:** Backend relayer triggers forwarding to the recipient.
 
----
 
 ## Project Progress & EIP-7702 Upgrade Status
 
@@ -126,7 +120,6 @@ IMPLEMENTATION_ADDRESS=0x...         # Set for upgrade script
 - The upgrade transaction has been **successfully submitted and mined** on both Sepolia and Arbitrum Sepolia.
 - The system is now fully upgraded and ready for further steps.
 
----
 
 ## Deployment & Upgrade Details
 
@@ -138,7 +131,6 @@ IMPLEMENTATION_ADDRESS=0x...         # Set for upgrade script
 - **EIP-7702 Upgrade Transaction Hash (Arbitrum Sepolia):**
   - `0x44c6393bbdbb4d2081f941336c0ed52e1a96ea2d18ce9ad90bde1b4b23e960b5`
 
----
 
 ## Viem EIP-7702 Upgrade Progress
 
@@ -146,7 +138,6 @@ IMPLEMENTATION_ADDRESS=0x...         # Set for upgrade script
 - The EOA is now a smart wallet on Sepolia and Arbitrum Sepolia, delegating logic to the implementation contract.
 - All future interactions use the new smart wallet functionality.
 
----
 
 ## Testing
 
@@ -158,7 +149,6 @@ forge test
 forge script script/Test.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast
 ```
 
----
 
 ## Architecture
 
@@ -166,7 +156,6 @@ forge script script/Test.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast
 EOA Wallet → EIP-7702 → Smart Contract → Backend Monitor → Recipient
 ```
 
----
 
 ## Security & Best Practices
 
@@ -175,7 +164,6 @@ EOA Wallet → EIP-7702 → Smart Contract → Backend Monitor → Recipient
 - **API Keys:** Use Etherscan V2 API for all supported chains.
 - **Separation of Concerns:** For production, consider using separate addresses for deployer, EOA, and relayer.
 
----
 
 ## Future Directions
 
@@ -186,4 +174,4 @@ EOA Wallet → EIP-7702 → Smart Contract → Backend Monitor → Recipient
 
 ---
 
-The system is intentionally simple, robust, and ready for the future of unified deposit addresses. 
+An failed attempt to solve the Unified Deposit Address problem. 
